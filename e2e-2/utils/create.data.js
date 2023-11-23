@@ -1,5 +1,7 @@
-const randomestring = require('randomestring');
+const randomstring = require('randomstring');
 
-export function generateString(length) {
-    return randomestring.generate(length);
+function generateString(length) {
+    return randomstring.generate(length);
 }
+
+module.exports = { generateString }

@@ -2,8 +2,20 @@ const Page = require('./page.js');
 
 class DashboardPage extends Page {
 
-    get addnewDashboard() {
-        return $('.ghostButton__text--SjHtK');
+    get btnAddnewDashboard() {
+        return $("//*[text()='Add New Dashboard']");
+    }
+
+    get btnDelete() {
+        return $("//*[text()='Delete']");
+    }
+
+    get btnEdit() {
+        return $("//*[text()='Edit']");
+    }
+
+    get btnAddWiget() {
+        return $("//*[text()='Add new widget']");
     }
 
     get noWidgetsOnDashboardText() {
@@ -11,7 +23,19 @@ class DashboardPage extends Page {
     }
 
     async clickAddnewDashboardBtn() {
-        (await this.addnewDashboard).click();
+        (await this.btnAddnewDashboard).click();
+    }
+
+    async clickDeleteBtn() {
+        (await this.btnDelete).click();
+    }
+
+    async clickEditBtn() {
+        (await this.btnEdit).click();
+    }
+
+    async clickAddWidgetBtn() {
+        (await this.btnAddWidget).click();
     }
 }
 

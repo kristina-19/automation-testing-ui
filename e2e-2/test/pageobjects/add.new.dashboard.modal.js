@@ -10,7 +10,7 @@ class AddNewDashboardMadal extends Page {
         return $('button.bigButton__big-button--BmG4Q.bigButton__color-booger--EpRlL');
     }
 
-    async createNewDashboard(newName) {
+    async enterNameandClickBtn(newName) {
         await this.dashboardName.setValue(newName);
         await this.btnAdd.click();
 
