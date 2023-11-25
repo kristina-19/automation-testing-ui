@@ -1,3 +1,31 @@
+const { Reporter } = require('@reportportal/agent-js-webdriverio');
+
+const config = {
+  endpoint: 'http://localhost:8080/api/v1',
+  token: 'new-api-key_uCLwJR0mSeeM9YpakoZhUN-1ZRt-7ko1Zwoe4ct72jjQLqMj19dqAp5_igVwNPnj',
+  project: 'my_project',
+  launch: 'Launch name',
+  mode: 'DEFAULT',
+  debug: false,
+  description: "UI tests",
+//   attributes: [
+//     {
+//       key: "attributeKey",
+//       value: "attrbiuteValue",
+//     },
+//     { 
+//       value: "anotherAttrbiuteValue",
+//     },
+//  ],
+  attachPicturesToLogs: false,
+  rerun: false,
+  //rerunOf: 'launchUuid of already existed launch', 
+  //cucumberNestedSteps: false,
+  skippedIssue: true,
+  isLaunchMergeRequired: false,
+};
+
+
 exports.config = {
     //
     // ====================
@@ -124,7 +152,7 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    reporters: [[Reporter, config]],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
